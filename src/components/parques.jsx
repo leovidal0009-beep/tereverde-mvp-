@@ -29,17 +29,9 @@ const listaDeParques = [
     endereco: 'Estrada Teresópolis-Friburgo, km 12',
     trilhas: ['Trilha dos Três Picos', 'Trilha do Pico do Caledônia'],
   },
-  {
-    id: 3,
-    nome: 'PARNASO – Sede Teresópolis',
-    horario: 'Ter–Dom, 8h–17h',
-    imagem: imgMontanhas,
-    descricao: 'Acesso principal ao Parque Nacional da Serra dos Órgãos pelo lado de Teresópolis. Conta com centro de visitantes, área de camping e ponto de partida para diversas trilhas.',
-    ingresso: 'R$ 22,00 (adulto)',
-    contato: '(21) 2641-1070',
-    endereco: 'Av. Rotariana s/n – Alto',
-    trilhas: ['Trilha da Pedra do Sino', 'Trilha das Cigarras'],
-  },
+  
+   
+  ,
   {
     id: 4,
     nome: 'Parque Natural Municipal Montanhas de Teresópolis',
