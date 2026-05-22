@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Tere-Verde-Mvp
+Plataforma de turismo ecológico em Teresópolis
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🌿 Terê Verde MVP
 
-## Available Scripts
+## 👥 Integrantes
+- Caio Nascimento
+- Samantha Nunes
+- Matheus Almeida
+- Leonardo Vidal
+- Bruna
 
-In the project directory, you can run:
+## 📌 Situação-Problema
+Circuito Terê Verde
 
-### `npm start`
+## 💡 Descrição do Projeto
+O Terê Verde Online é uma plataforma web que centraliza informações sobre os principais parques de Teresópolis, incluindo trilhas, biodiversidade, eventos e condições de visitação. O objetivo é facilitar o acesso à informação e promover o turismo sustentável.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🚀 MVP Definido
+O MVP consiste em um website responsivo com as seguintes funcionalidades:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Listagem dos parques
+- Informações sobre trilhas (nível, duração, localização)
+- Exibição de eventos
+- Status das atrações (aberto/fechado)
+- Área de login para administradores
+- Painel simples para atualização de informações
 
-### `npm test`
+## 🛠️ Tecnologias Utilizadas
+- HTML, CSS, JavaScript
+- (Opcional: React, Node.js, etc.)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ▶️ Como Executar o Projeto
+1. Baixe o projeto
+2. Abra o arquivo `index.html` no navegador
 
-### `npm run build`
+(ou, se tiver backend)
+1. Instale as dependências
+2. Execute `npm install`
+3. Execute `npm start`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🎯 Objetivos do Produto
+- Centralizar informações dos parques
+- Melhorar a experiência dos visitantes
+- Promover o turismo sustentável
+- Apoiar a educação ambiental
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🌱 Benefícios
+- Acesso rápido a informações confiáveis
+- Melhor planejamento de visitas
+- Mais segurança para os turistas
+- Valorização do turismo local
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 👥 Público-Alvo
+- Turistas
+- Aventureiros (trilhas, montanhismo)
+- Moradores locais
+- Guias turísticos
 
-### `npm run eject`
+## 😖 Dores do Público
+- Informações espalhadas
+- Falta de atualização
+- Dificuldade de planejamento
+- Insegurança nas trilhas
+- Falta de informações claras
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## ℹ️ Informações Adicionais
+Projeto voltado para facilitar o acesso à informação e incentivar a preservação ambiental.
