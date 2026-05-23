@@ -6,8 +6,6 @@
 
 ## 👥 Integrantes
 
-| Nome | Função 
-|------|--------
 | Leonardo Vidal 
 | Caio Nascimento 
 | Samantha Nunes 
