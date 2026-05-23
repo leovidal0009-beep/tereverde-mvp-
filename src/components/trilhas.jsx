@@ -11,6 +11,8 @@ const trilhas = [
     dificuldade: 'dificil',
     descricao: 'Uma das trilhas mais icônicas do Brasil. Começa em Teresópolis e termina no ponto mais alto do PARNASO (2.263 m). Exige preparo físico e agendamento obrigatório.',
     status: 'fechada',
+    lat: -22.4356,
+    lng: -43.0089,
   },
   {
     id: 2,
@@ -21,6 +23,8 @@ const trilhas = [
     dificuldade: 'moderado',
     descricao: 'Vista para o pico mais famoso da Serra dos Órgãos. Rota moderada com pontos de observação panorâmicos e rica em vegetação de Mata Atlântica.',
     status: 'aberta',
+    lat: -22.4578,
+    lng: -43.0156,
   },
   {
     id: 3,
@@ -31,6 +35,8 @@ const trilhas = [
     dificuldade: 'facil',
     descricao: 'Trilha leve e familiar que passa por três cachoeiras. Ideal para iniciantes e crianças. Inclui área de piquenique e mirante.',
     status: 'aberta',
+    lat: -22.4122,
+    lng: -42.9733,
   },
   {
     id: 4,
@@ -41,6 +47,8 @@ const trilhas = [
     dificuldade: 'facil',
     descricao: 'Trilha curta com formação rochosa em formato de tartaruga ao final. Ótima para iniciantes e famílias com crianças.',
     status: 'aberta',
+    lat: -22.4200,
+    lng: -42.9800,
   },
   {
     id: 5,
@@ -51,6 +59,8 @@ const trilhas = [
     dificuldade: 'dificil',
     descricao: 'Travessia desafiadora pelos três picos principais do parque. Requer experiência, equipamento adequado e guia credenciado.',
     status: 'aberta',
+    lat: -22.5234,
+    lng: -42.9876,
   },
   {
     id: 6,
@@ -61,11 +71,78 @@ const trilhas = [
     dificuldade: 'moderado',
     descricao: 'Rota histórica que percorre antigas trilhas dos colonos imigrantes. Passa por ruínas e áreas de Mata Atlântica preservada.',
     status: 'aberta',
+    lat: -22.4456,
+    lng: -43.0045,
   },
 ];
 
 const difLabel = { facil: 'Fácil', moderado: 'Moderado', dificil: 'Difícil' };
 
+/* ── Mapa integrado via OpenStreetMap (sem API key) ── */
+function MapaTrilha({ lat, lng, nome }) {
+  const zoom = 14;
+  const src = `https://www.openstreetmap.org/export/embed.html?bbox=${lng - 0.02},${lat - 0.02},${lng + 0.02},${lat + 0.02}&layer=mapnik&marker=${lat},${lng}`;
+  const linkExterno = `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=${zoom}/${lat}/${lng}`;
+
+  return (
+    <div className="mapa-container">
+      <div className="mapa-header">
+        <span>📍 Localização: {nome}</span>
+        <a href={linkExterno} target="_blank" rel="noopener noreferrer" className="mapa-link-externo">
+          Abrir no mapa ↗
+        </a>
+      </div>
+      <iframe
+        title={`Mapa - ${nome}`}
+        src={src}
+        className="mapa-iframe"
+        allowFullScreen
+        loading="lazy"
+      />
+    </div>
+  );
+}
+
+/* ── Card de trilha ── */
+function TrilhaCard({ trilha }) {
+  const [mapaAberto, setMapaAberto] = useState(false);
+
+  return (
+    <div className="trilha-card">
+      <div className="trilha-header">
+        <span className="trilha-nome">{trilha.nome}</span>
+        <span className={`trilha-dif ${trilha.dificuldade}`}>
+          {difLabel[trilha.dificuldade]}
+        </span>
+      </div>
+
+      <div className="trilha-meta">
+        <span>📍 {trilha.parque}</span>
+        <span>📏 {trilha.distancia}</span>
+        <span>⏱️ {trilha.duracao}</span>
+        <span style={{ color: trilha.status === 'aberta' ? '#27ae60' : '#c0392b', fontWeight: 700 }}>
+          {trilha.status === 'aberta' ? '✅ Aberta' : '🚫 Fechada'}
+        </span>
+      </div>
+
+      <p className="trilha-desc">{trilha.descricao}</p>
+
+      {/* Botão ver mapa — RF15 */}
+      <button
+        className={`btn-ver-mapa ${mapaAberto ? 'ativo' : ''}`}
+        onClick={() => setMapaAberto(!mapaAberto)}
+      >
+        🗺️ {mapaAberto ? 'Fechar mapa' : 'Ver no mapa'}
+      </button>
+
+      {mapaAberto && (
+        <MapaTrilha lat={trilha.lat} lng={trilha.lng} nome={trilha.nome} />
+      )}
+    </div>
+  );
+}
+
+/* ── Página principal ── */
 function Trilhas() {
   const [filtro, setFiltro] = useState('todas');
 
@@ -78,8 +155,7 @@ function Trilhas() {
       <h2 className="page-titulo">Trilhas de Teresópolis</h2>
       <p className="page-subtitulo">Escolha sua aventura e explore a Serra dos Órgãos</p>
 
-      {/* Filtros */}
-      <div className="guias-filtros" style={{ marginBottom: '2rem' }}>
+      <div className="guias-filtros">
         {[['todas','Todas'], ['facil','Fácil'], ['moderado','Moderado'], ['dificil','Difícil']].map(([v, l]) => (
           <button
             key={v}
@@ -93,23 +169,7 @@ function Trilhas() {
 
       <div className="trilhas-grid">
         {lista.map(trilha => (
-          <div className="trilha-card" key={trilha.id}>
-            <div className="trilha-header">
-              <span className="trilha-nome">{trilha.nome}</span>
-              <span className={`trilha-dif ${trilha.dificuldade}`}>
-                {difLabel[trilha.dificuldade]}
-              </span>
-            </div>
-            <div className="trilha-meta">
-              <span>📍 {trilha.parque}</span>
-              <span>📏 {trilha.distancia}</span>
-              <span>⏱️ {trilha.duracao}</span>
-              <span style={{ color: trilha.status === 'aberta' ? '#27ae60' : '#c0392b', fontWeight: 700 }}>
-                {trilha.status === 'aberta' ? '✅ Aberta' : '🚫 Fechada'}
-              </span>
-            </div>
-            <p className="trilha-desc">{trilha.descricao}</p>
-          </div>
+          <TrilhaCard key={trilha.id} trilha={trilha} />
         ))}
       </div>
     </div>
