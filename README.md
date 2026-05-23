@@ -113,7 +113,6 @@ npm install
 npm run dev
 ```
 
-Acesse em: **http://localhost:5173**
 
 ### Deploy (atualizar o site)
 
@@ -156,13 +155,11 @@ O Vercel detecta o push e publica automaticamente em ~1 minuto.
 - **Parque Nacional da Serra dos Órgãos (PARNASO)**
 - **Parque Estadual dos Três Picos**
 - **Parque Natural Municipal Montanhas de Teresópolis**
-- **PARNASO – Sede Teresópolis**
 
 ---
 
 ## ⚠️ Observações sobre o MVP
 
-- Os dados de trilhas, parques, guias e eventos estão armazenados diretamente no código (hardcoded), conforme proposta do MVP
 - O sistema de login está com estrutura completa, aguardando integração com backend
 - O clima é obtido em tempo real via API pública gratuita (Open-Meteo)
 - Os mapas são renderizados via OpenStreetMap, sem necessidade de chave de API
