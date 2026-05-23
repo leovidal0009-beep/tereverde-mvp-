@@ -128,7 +128,7 @@ O Vercel detecta o push e publica automaticamente em ~1 minuto.
 
 ## 🌐 Acesse o Site
 
-🔗 [**[tereverde-mvp.vercel.app](https://tereverde-mvp.vercel.app)](https://tereverde-mvp-do82-ivjeu7lan-leovidal0009-beeps-projects.vercel.app/)**
+🔗 [**(https://tereverde-mvp-do82-ivjeu7lan-leovidal0009-beeps-projects.vercel.app/)**
 
 ---
 
